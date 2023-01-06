@@ -10,7 +10,7 @@ require('dotenv').config();
 // const MONGO_URI = require("../utils/consts");
 
 mongoose
-  .connect(process.env.MONGODB_URI)
+  .connect(`mongodb+srv://msdiaz18:${process.env.MONGOPASSWORD}@shopbox1.pzl0hf7.mongodb.net/?retryWrites=true&w=majority`)
   .then(x => console.log(`Connected the Database: "${x.connections[0].name}"`))
   .catch(err => console.error('Error connecting to mongo', err));
 

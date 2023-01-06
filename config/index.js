@@ -66,7 +66,7 @@ module.exports = (app) => {
         maxAge: 600000
       },
       store: MongoStore.create({
-        mongoUrl: process.env.MONGO_URI,
+        mongoUrl: `mongodb+srv://msdiaz18:${process.env.MONGOPASSWORD}@shopbox1.pzl0hf7.mongodb.net/?retryWrites=true&w=majority`
       }),
     })
   );
