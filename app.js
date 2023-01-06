@@ -20,7 +20,7 @@ const bodyParser = require('body-parser');
 require("./config")(app);
 
 const capitalized = require("./utils/capitalized");
-const projectName = "Project-2";
+const projectName = "shopbox-project2";
 
 // app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
 
