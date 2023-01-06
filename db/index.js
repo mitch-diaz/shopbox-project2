@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 
 require('dotenv').config();
 
-const MONGO_URI = require("../utils/consts");
+// const MONGO_URI = require("../utils/consts");
 
 mongoose
   .connect(process.env.MONGODB_URI)
