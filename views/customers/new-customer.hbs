@@ -1,39 +1,59 @@
 {{#if currentUser}}
 
-<div class="new-customer-container">
+<div class="form__parent__container">
+   <div class="form__title">
+      <h2>Add new customer</h2>
+   </div>
 
-   <div class="new-customer-formBox">
-
-      <h1>Add A New Customer</h1>
-
-      <br>
-
+   <div class="form__wrapper">
       <form action="/customers/create" method="POST">
-         <input class="nameInput" type="text" name="firstName" placeholder="First Name">
-         <input class="nameInput" type="text" name="lastName" placeholder="Last Name">
+         <div class="inputs__wrapper">
+            <div class="label-input-col">
+               <label>First Name:</label>
+               <input type="text" name="firstName">
+            </div>
+         
+            <div class="label-input-col">
+               <label>Last Name:</label>
+               <input type="text" name="lastName">
+            </div>
+         
+            <div class="label-input-col">
+               <label>Email:</label>
+               <input type="text" name="email">
+            </div>
+         
+            <div class="small__input__group-flex-row media-fwrap">
+               <div class="label-input-col">
+                  <label>Address:</label>
+                  <input type="text" name="address">
+               </div>
+               <div class="label-input-col">
+                  <label>Apartment #:</label>
+                  <input type="text" name="apartmentNumber">
+               </div>
+            </div>
+            <div class="small__input__group-flex-row media-fwrap">
+               <div class="label-input-col">
+                  <label>City:</label>
+                  <input type="text" name="city">
+               </div>
+               <div class="label-input-col">
+                  <label>State:</label>
+                  <input type="text" name="state">
+               </div>
+               <div class="label-input-col">
+                  <label>Zip:</label>
+                  <input type="number" name="zip">
+               </div>
+            </div>
+         </div>
 
-         <br><br>
+         <button class="submit-btn" type="submit">Submit</button>
 
-         <input class="emailInput" type="text" name="email" placeholder="Email">
-
-         <br><br>
-
-         <input class="addressInput" type="text" name="address" placeholder="Address">
-         <input class="apartNumInput" type="text" name="apartmentNumber" placeholder="Apt Number">
-
-         <br><br>
-
-         <input class="cityInput" type="text" name="city" placeholder="City">
-         <input class="stateInput" type="text" name="state" placeholder="State">
-         <input class="zipInput" type="number" name="zip" placeholder="Zip Code">
-
-         <br><br>
-
-         <button class="add-new-customer-btn" type="submit">Add New Customer</button>
       </form>
 
    </div>
-
 </div>
 
 {{/if}}

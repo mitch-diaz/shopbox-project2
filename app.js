@@ -20,16 +20,14 @@ const bodyParser = require('body-parser');
 require("./config")(app);
 
 const capitalized = require("./utils/capitalized");
-const projectName = "shopbox-project2";
-
-// app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
+const projectName = "Shopbox";
+app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use((req, res, next) => {
   res.locals.currentUser = req.session.user
-  // res.locals.isAdmin = req.session.user.role === 'ADMIN'
   next();
 })
 
@@ -43,12 +41,10 @@ app.use("/auth", authRoutes);
 
 app.use('/', require('./routes/customer.routes'))
 app.use('/', require('./routes/purchase.routes'))
-
-
-
-// const bookRoutes = );
 app.use("/", require("./routes/book.routes"))
 app.use("/", require("./routes/movie.routes"))
+
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 

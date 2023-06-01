@@ -1,8 +1,5 @@
 const router = require("express").Router();
-
 const mongoose = require("mongoose");
-
-// Require the User model in order to interact with the database
 const Movie = require("../models/Movie.model");
 
 // Require necessary (isLoggedOut and isLoggedIn) middleware in order to control access to specific routes
@@ -21,7 +18,6 @@ router.get('/movies', (req, res, next) => {
     .catch(err => {
         console.log(err)
     })
-    
 });
 
 
@@ -94,4 +90,3 @@ router.post('/movies/delete/:movieId', (req, res, next) => {
 });
 
 module.exports = router;
-

@@ -30,18 +30,6 @@ router.post("/signup", isLoggedOut, (req, res) => {
     });
   }
 
-  //   ! This use case is using a regular expression to control for special characters and min length
-  /*
-  const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
-
-  if (!regex.test(password)) {
-    return res.status(400).render("signup", {
-      errorMessage:
-        "Password needs to have at least 8 chars and must contain at least one number, one lowercase and one uppercase letter.",
-    });
-  }
-  */
-
   // Search the database for a user with the email submitted in the form
   User.findOne({ email }).then((found) => {
     // If the user is found, send the message email is taken
@@ -80,7 +68,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
         if (error.code === 11000) {
           return res
             .status(400)
-            .render("auth/signup", { errorMessage: "email need to be unique. The email you chose is already in use." });
+            .render("auth/signup", { errorMessage: "The email you provided is already in use." });
         }
         return res
           .status(500)
@@ -206,7 +194,7 @@ router.get("/logout", isLoggedIn, (req, res) => {
 });
 
 
-// ======== SHELVED FEATURE - CHANGE / ADD NEW PASSWORD ===========
+// ======== CHANGE / ADD NEW PASSWORD ===========
 router.get('/change-password', (req, res, next)=>{
   res.render("auth/change-password", {currentUser: req.session.user});
 });
@@ -214,7 +202,6 @@ router.get('/change-password', (req, res, next)=>{
 router.post('/change-password', (req, res, next)=>{
   if(req.body.newpass !== req.body.confirmnewpass){
     res.redirect("/auth/profile")
-    // error message should follow here
   }
 
   User.findById(req.session.user._id)
@@ -240,22 +227,6 @@ router.post('/change-password', (req, res, next)=>{
     }
   })
 })
-// =======================================================
 
-// ======== SHELVED: DISCERN BETWEEN ADMIN AND STAFF USER ==========
-// router.get('/profile', (req, res, next)=>{
-//   User.findById(req.session.user._id)
-//   .then((user)=>{
-//     console.log('The user =====> ', user);
-//     if (!req.session.user) {
-//       return res.redirect('/auth/staff-profile')
-//     } 
-//     return res.render('auth/admin-profile', {user: user})
-//   })
-//   .catch((error)=>{
-//     console.log(error)
-//   })
-// })
-// =======================================================
 
 module.exports = router;

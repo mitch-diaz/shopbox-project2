@@ -1,40 +1,60 @@
 {{#if currentUser}}
 
-<div class="update-customer-container">
-
-   <div class="update-customer-formBox">
-
-      <h1>Update Customer Information</h1>
-
-      <br>
-
-      <form action="/customers/{{id}}" method="POST">
-            
-            <input class="nameInput" placeholder="First Name" type="text" name="firstName" value="{{firstName}}">
-            <input class="nameInput" placeholder="Last Name" type="text" name="lastName" value="{{lastName}}">
-
-         <br><br>
-
-         <input class="emailInput" placeholder="Email" type="text" name="email" value="{{email}}">
-
-         <br><br>
-
-         <input class="addressInput" placeholder="Address" type="text" name="address" value="{{address}}">
-         <input class="apartNumInput" placeholder="Apartment #" type="text" name="apartmentNumber" value="{{apartmentNumber}}">
-
-         <br><br>
-
-         <input class="cityInput" placeholder="City" type="text" name="city" value="{{city}}">
-         <input class="stateInput" placeholder="State" type="text" name="state" value="{{state}}">
-         <input class="zipInput" placeholder="Zip" type="number" name="zip" value="{{zip}}">
-
-         <br><br>
-
-         <button class="update-customer-btn" type="submit">Update Customer</button>
-      </form>
-
+<div class="form__parent__container">
+   <div class="form__title">
+      <h2>Update customer information</h2>
    </div>
 
+   <div class="form__wrapper">
+         
+      <form action="/customers/{{id}}" method="POST">
+         <div class="inputs__wrapper">
+               <div class="label-input-col">
+                  <label>First Name:</label>
+                  <input type="text" name="firstName" value="{{firstName}}">
+               </div>
+            
+               <div class="label-input-col">
+                  <label>Last Name:</label>
+                  <input type="text" name="lastName" value="{{lastName}}">
+               </div>
+            
+               <div class="label-input-col">
+                  <label>Email:</label>
+                  <input type="text" name="email" value="{{email}}">
+               </div>
+            
+               <div class="small__input__group-flex-row media-fwrap">
+                  <div class="label-input-col">
+                     <label>Address:</label>
+                     <input type="text" name="address" value="{{address}}">
+                  </div>
+                  <div class="label-input-col">
+                     <label>Apartment #:</label>
+                     <input type="text" name="apartmentNumber" value="{{apartmentNumber}}">
+                  </div>
+               </div>
+               <div class="small__input__group-flex-row media-fwrap">
+                  <div class="label-input-col">
+                     <label>City:</label>
+                     <input type="text" name="city" value="{{city}}">
+                  </div>
+                  <div class="label-input-col">
+                     <label>State:</label>
+                     <input type="text" name="state" value="{{state}}">
+                  </div>
+                  <div class="label-input-col">
+                     <label>Zip:</label>
+                     <input type="number" name="zip" value="{{zip}}">
+                  </div>
+               </div>
+               <button class="submit-btn" type="submit">Submit</button>
+         </div>
+
+         <a class="form-pg-text-link" href="/customers/{{_id}}">>> Back to customer details</a>
+         
+      </form>
+   </div>
 </div>
 
 {{/if}}

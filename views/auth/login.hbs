@@ -1,22 +1,20 @@
+<div class="form__parent__container">
 
-<div class="logIn-container">
+   <div class="form__title">
+      <h1>Sign in</h1>
+      <p>New to Shopbox? <a href="/auth/signup">Sign up</a></p>
+   </div>
 
-   <div class="login">
+   <div class="form__wrapper">
 
-      <h1>Login</h1>
-      <p>New to Shopbox? <a href="/auth/signup"> <b>Sign up</b> </a> </p>
-      
       <form action="/auth/login" method="POST">
          
-         <input type="text" name="email" placeholder="Email">
+         <div class="inputs__wrapper">
+            <input type="text" name="email" placeholder="Email">
+            <input type="password" name="password" placeholder="Password">
+         </div>
 
-         <br><br>
-
-         <input type="password" name="password" placeholder="Password">
-
-         <br><br>
-
-         <button type="submit">Submit</button>
+         <button class="submit-btn" type="submit">Submit</button>
       </form>
 
       {{#if errorMessage}}

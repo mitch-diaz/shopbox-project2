@@ -1,51 +1,51 @@
+<div class="form__parent__container">
+   <div class="form__title">
+      <h2>Update Book Details</h2>
+   </div>
 
+   <div class="form__wrapper">
+   
+      <form action="/books/edit/{{id}}" method="POST">
+         <div class="inputs__wrapper">
+            
+            <div class="label-input-col">
+               <label>Title:</label>
+               <input type="text" name="title" value="{{this.title}}">
+            </div>
 
-<div class="content-container">
+            <div class="label-input-col">
+               <label>Author:</label>
+               <input type="text" name="author" value="{{this.author}}">
+            </div>
 
-   <div class="createContent">
+            <div class="label-input-col">
+               <label>Genre:</label>
+               <input type="text" name="genre" value="{{this.genre}}">
+            </div>
 
-<h1>Update Book Details</h1>
+            <div class="small__input__group-flex-row media-fwrap">
+               <div class="label-input-col">
+                  <label># of pages:</label>
+                  <input type="text" name="pages" value="{{this.pages}}">
+               </div>
 
+               <div class="label-input-col">
+                  <label>Price:</label>
+                  <input type="text" name="price" value="{{this.price}}">
+               </div>
 
-<form action="/books/edit/{{id}}" method="POST">
-   <label> Title: <br>
-      <input type="text" name="title" value="{{this.title}}">
-   </label>
+               <div class="label-input-col">
+                  <label>Inventory:</label>
+                  <input type="text" name="inventory" value="{{this.inventory}}">
+               </div>
+            </div>
+         </div>
 
-   <br><br>
+         <button class="submit-btn">Submit</button>
+      </form>
 
-   <label> Author: <br>
-      <input type="text" name="author" value="{{this.author}}">
-   </label>
-
-   <br><br>
-
-   <label> Number of Pages: <br>
-      <input type="text" name="pages" value="{{this.pages}}">
-   </label>
-
-   <br><br>
-
-   <label> Price: <br>
-      <input type="text" name="price" value="{{this.price}}">
-   </label>
-
-   <br><br>
-
-   <label> Genre: <br>
-      <input type="text" name="genre" value="{{this.genre}}">
-   </label>
-
-   <br><br>
-
-   <label> Inventory: <br>
-      <input type="text" name="inventory" value="{{this.inventory}}">
-   </label>
-
-   <br><br>
-
-   <button>Update</button>
-</form>
+      <a class="form-pg-text-link" href="/books/details/{{_id}}">>> Back to book details</a>
 
    </div>
+   
 </div>

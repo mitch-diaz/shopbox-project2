@@ -1,0 +1,246 @@
+/* LIST VIEW STYLES FOR CUSTOMER, BOOKS, MOVIES, & PURCHASES MAIN PAGES */
+
+/* Customers & Purchases main page shared styles */
+main { padding: 0 10px 0; }
+h5 { margin-bottom: 10px; }
+
+span {
+    font-weight: 900;
+    color: #5c5c5c;
+}
+
+.content__titles__container-cust-purch {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #4b4b4b;
+    margin-top: 30px;
+}
+
+.content-title-cust-purch {
+    font-size: 1.2em;
+    font-weight: 900;
+    width: 100%;
+}
+
+.flex__parent__container-list-display-cust-purch {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #a4a4a4;
+}
+
+.content__wrapper-list-display-cust-purch {
+    width: 100%;
+}
+
+.flex__parent__container-list-display-cust-purch p {
+    font-size: 1em;
+    width: 95%;
+}
+
+.content__wrapper-list-display .hidden-title,
+.content__wrapper-list-display-cust-purch .hidden-title {
+    display: none;
+}
+
+/* Books & Movies main page shared styles */
+.page__content__container { 
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px;
+}
+
+.content-heading {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 600px;
+    align-items: baseline;
+    gap: 5em;
+}
+
+.content__titles__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #4b4b4b;
+    margin-top: 30px;
+}
+
+.content-title {
+    font-size: 1.2em;
+    font-weight: 900;
+    width: 60%;
+}
+
+.content-title:nth-of-type(2),
+.content-title:nth-of-type(3) {
+    width: 20%;
+}
+
+.flex__parent__container-list-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #a4a4a4;
+}
+
+.flex__parent__container-list-display p {
+    font-size: 1em;
+    width: 95%;
+}
+
+.content__wrapper-list-display {
+    width: 60%;
+}
+
+.content__wrapper-list-display:nth-of-type(2) {
+    width: 20%;
+}
+
+.content__wrapper-list-display:nth-of-type(3) {
+    width: 20%;
+}
+
+.details-link {
+    color: #006AFF;
+}
+
+.details-link:hover {
+    color: #005AD9;
+    text-decoration: underline;
+}
+
+/* ========== All Button Styles ========== */
+
+.detail-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-item-btn, 
+.edit-btn {
+    border-radius: 4px;
+    border: none;
+    padding: 10px;
+    width: 11rem;
+    background-color: #292929;
+    font-size: 1.1rem;
+    color: white;
+    margin: 15px 0 15px;
+}
+
+.edit-btn:hover,
+.add-item-btn:hover {
+    background-color: #292929d6;
+}
+
+.delete-btn {
+  border: none;
+  padding: 10px;
+  width: 11rem;
+  background-color: #e5e5e5;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  margin-top: 15px;
+  color: #000
+}
+
+.delete-btn:hover {
+    padding: 10px;
+    width: 11rem;
+    background-color: #f000006c;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 900;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.fa-trash-can {
+    color: #000;
+    padding-right: 5px;
+    font-size: 1.5rem;
+}
+
+.fa-file-pen {
+    color: #fff;
+    padding-right: 5px;
+    font-size: 1.5rem;
+}
+
+.warning {
+    font-size: .8rem;
+    width: fit-content;
+}
+
+.warning:hover { background-color: yellow; }
+
+button a { color: white; }
+
+.profile__buttons__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+/* ======= All detail page styles ======== */
+.content__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    width: 100%;
+    max-width: 1200px;
+    gap: 25px;
+}
+
+.details__container {
+    width: 100%;
+    min-width: 300px;
+    max-width: 600px;
+}
+
+.details_heading_wrapper {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #a4a4a4;
+}
+
+.details_flex_row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0 auto;
+}
+
+.details_flex_col {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.back-link {
+    color: #006AFF;
+    font-size: 1.1em;
+    font-weight: 400;
+    padding: 11px;
+}
+
+.back-link:hover {
+    color: #005AD9;
+    background-color: #e5e5e5;
+    text-decoration: underline;
+    padding: 11px;
+    border-radius: 5px;
+}
+
+.detail-info {
+    font-size: 1.2em;
+    margin: 10px;
+}

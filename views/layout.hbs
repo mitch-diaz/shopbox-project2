@@ -1,69 +1,67 @@
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>{{appTitle}}</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link rel="stylesheet" href="/stylesheets/customers-purchases-pages.css" />
-    <link rel="stylesheet" href="/stylesheets/login-signup-forms.css" />
-    <link rel="stylesheet" href="/stylesheets/bookAndMovie.css">
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>{{appTitle}}</title>
+        <link 
+          rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/stylesheets/home-pg-styles.css" />
+        <link rel="stylesheet" href="/stylesheets/logged-in-content-styles.css" />
+        <link rel="stylesheet" href="/stylesheets/form-styles.css" />
+        <link rel="stylesheet" href="/stylesheets/media-queries.css" />
+        
+    </head>
 
-  <body>
+    <body>
+        <header>
+            <div class="container">
+                <nav class="nav">
+                    <div class="fa__logo">
+                      <a class="nav_link--logo" href="/">
+                        <i class="fa-solid fa-s logo"></i>
+                        <i class="fa-solid fa-h logo"></i>
+                        <i class="fa-solid fa-o logo"></i>
+                        <i class="fa-solid fa-p logo"></i>
+                        <i class="fa-solid fa-b square logo"></i>
+                        <i class="fa-solid fa-o square logo"></i>
+                        <i class="fa-solid fa-x square logo"></i>
+                      </a>
+                    </div>
+                    <div class="nav_items">
+                      {{#unless currentUser}}
+                        <a class="nav_link" href="#">Products</a>
+                        <a class="nav_link" href="#">Business Types</a>
+                        <a class="nav_link" href="#">Why Shopbox?</a>
+                        <a class="nav_link" href="#">Pricing</a>
+                        <a class="nav_link" href="#">Resources</a>
+                      {{/unless}}
+                      {{#if currentUser}}
+                        <a class="nav_link_user" href="/customers">Customers</a>
+                        <a class="nav_link_user" href="/books">Books</a>
+                        <a class="nav_link_user" href="/movies">Movies</a>
+                        <a class="nav_link_user" href="/purchases">Purchases</a>
+                      {{/if}}
+                      {{#unless currentUser}}
+                        <a class="auth-link sign-up" href="/auth/signup">Sign up</a>
+                        <a class="auth-link login" href="/auth/login">Login</a>
+                      {{/unless}}
+                      {{#if currentUser}}
+                        <a class="auth-link profile" href="/auth/profile">Profile</a>
+                        <a class="auth-link logout" href="/auth/logout">Logout</a>
+                      {{/if}}
+                    </div>
+                </nav>
+            </div>
+        </header>
 
-    <nav>
+        {{{body}}}
 
-      {{!-- <div class="navigationItems">
-        <a class="homeLink" href="/"> <img src="/images/logo.png" alt="logo"> <b>Shopbox</b></a>
-      </div> --}}
-
-      <div class="navigationItems">
-        <a class="homeLink" href="/"> <img src="/images/logo.png" alt="logo"><b>Shopbox</b></a>
-
-        {{#unless currentUser}}
-          <a class="navText-link-hover" href="#"> <b>Products</b></a>
-          <a class="navText-link-hover" href="#"> <b>Business Types</b></a>
-          <a class="navText-link-hover" href="#"> <b>Why Shopbox?</b></a>
-          <a class="navText-link-hover" href="#"> <b>Pricing</b></a>
-          <a class="navText-link-hover" href="#"> <b>Resources</b></a>
-        {{/unless}}
-
-        {{#if currentUser}}
-          <a class="navText-link-hover" href="/customers">Customers</a>
-          <a class="navText-link-hover" href="/books">Books</a>
-          <a class="navText-link-hover" href="/movies">Movies</a>
-          <a class="navText-link-hover" href="/purchases">Purchases</a>
-        {{/if}}
-      </div>
-
-      {{!-- <div class="navigationItems">
-        {{#if currentUser}}
-          <a class="navText-link-hover" href="/customers">Customers</a>
-          <a class="navText-link-hover" href="/books">Books</a>
-          <a class="navText-link-hover" href="/movies">Movies</a>
-          <a class="navText-link-hover" href="/purchases">Purchases</a>
-        {{/if}}
-      </div> --}}
-
-      <div class="loginItems">
-        {{#unless currentUser}}
-          <a class="navText-link-hover" href="/auth/signup"> <b>Sign up</b> </a>
-          <a class="navText-link-hover" href="/auth/login"> <b>Login</b> </a>
-        {{/unless}}
-
-        {{#if currentUser}}
-          <a class="navText-link-hover" href="/auth/logout"><b>Logout</b></a>
-          <a class="navText-link-hover" href="/auth/profile"> <b>Profile</b></a>
-        {{/if}}  
-      </div>
-
-    </nav>
-
-    {{{body}}}
-
-    <script src="/js/script.js"></script>
-  </body>
-
+        <script src="/js/script.js"></script>
+    </body>
 </html>

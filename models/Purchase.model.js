@@ -4,7 +4,7 @@ const { Schema, model } = mongoose;
 
 const purchaseSchema = new Schema({
     invoiceId: String,
-    invoiceDate: Date,
+    invoiceDate: String,
     paymentMethod: {
         type: String, 
         enum: ['Credit or debit card', 'Gift card', 'Cash', 'Mobile wallet'],

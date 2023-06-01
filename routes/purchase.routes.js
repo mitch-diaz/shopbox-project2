@@ -16,11 +16,9 @@ router.get('/purchases/create', (req, res, next) => {
         .then((booksFromDb) => {
             Movie.find()
             .then((moviesFromDb) => {
-        res.render('purchases/new-invoice', {movies: moviesFromDb, customers: customerFromDB, books: booksFromDb});
-        })
-        
-        })
-        
+            res.render('purchases/new-invoice', {movies: moviesFromDb, customers: customerFromDB, books: booksFromDb});
+            })
+        })  
     })
             .catch(err => {
                 console.log(err);
@@ -39,26 +37,7 @@ router.post('/purchases/create', (req, res ,next) => {
         purchaseTotal: req.body.purchaseTotal,
     }
 
-    // Purchase.create(invoiceToCreate)
-    // .then(newlyCreatedInvoice => {
-    //     console.log(newlyCreatedInvoice)
-    //     res.redirect('/purchases/create', newlyCreatedInvoice);
-    // }).catch(err => {
-    //     res.redirect('/purchases/create');
-    // })
-
-
-    // Purchase.create(invoiceToCreate)
-    // .then(newlyCreatedInvoice => {
-    //     console.log('NEW INVOICE ID ===>', newlyCreatedInvoice._id)
-    //     return Customer.findByIdAndUpdate(customers, {$push: {purchases: newlyCreatedInvoice._id} });
-    // })
-    // .then(() => res.redirect('/purchases/create'))
-    // .catch(err => {
-    //     res.redirect('/purchases/create');
-    // })
-// ==============================================
-console.log('invoiceToCreate===>', invoiceToCreate)
+// console.log('invoiceToCreate===>', invoiceToCreate)
     Purchase.create(invoiceToCreate)
     .then(newlyCreatedInvoice => {
         console.log('NEW INVOICE ID ===>', newlyCreatedInvoice._id)
@@ -67,12 +46,12 @@ console.log('invoiceToCreate===>', invoiceToCreate)
         })
         .then((updatedCustomerPurchase) => {
             console.log(updatedCustomerPurchase)
-            res.redirect('/purchases/create')
+            res.redirect('/purchases')
 
         }) 
         .catch(err => {
             console.log(err)
-            res.redirect('/purchases/create');
+            res.redirect('/purchases');
         })
     })
     

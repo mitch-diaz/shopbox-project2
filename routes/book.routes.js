@@ -1,15 +1,12 @@
 const router = require("express").Router();
-
 const mongoose = require("mongoose");
-
-// Require the User model in order to interact with the database
 const Book = require("../models/Book.model");
 
 // Require necessary (isLoggedOut and isLoggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
-// Main page the books list will be. 
+// Books main page. 
 router.get('/books', (req, res, next) => {
     Book.find()
     .then((bookFromDb) => {
@@ -50,7 +47,6 @@ router.post('/books/createBook', (req, res, next) => {
 
 
 // Details Page 
-
 router.get('/books/details/:bookId', (req, res, next) => {
     console.log({ID: req.params.bookId});
 
@@ -62,7 +58,6 @@ router.get('/books/details/:bookId', (req, res, next) => {
     })
     .catch(err => console.log(err))
 });
-
 
 
 router.get('/books/edit/:bookId', (req, res, next) => {
@@ -103,6 +98,4 @@ router.post('/books/delete/:bookId', (req, res, next) => {
 
 
 
-
 module.exports = router;
-

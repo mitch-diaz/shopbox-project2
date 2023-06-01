@@ -1,35 +1,48 @@
 {{#if currentUser}}
-<main class="content">
+<main>
 
-<div class="page-heading">
-    <h1>{{title}}</h1>
-    <p> <a class="back-link" href="/books">Back to books list</a> </p>
-</div>
+    <div class="content__container">
 
-<div class="details-container">
+        <div class="details__container">
+            
+            <div class="details_heading_wrapper">
+                <h2>{{title}}</h2>
+                <p><a class="back-link" href="/books">Back to books list</a></p>
+            </div>
 
-    <div class="details-info-box">
+            <div class="details-wrapper">
+                <div class="details_flex_col">
+                    <p class="detail-info"><span>Author:</span> {{author}}</p>
+                    <p class="detail-info"><span>Pages:</span> {{pages}}</p>
+                    <p class="detail-info"><span>Genre:</span> {{genre}}</p>
+                    <p class="detail-info"><span>Price:</span> ${{price}}</p>
+                    <p class="detail-info"><span>Inventory:</span> {{inventory}}</p>
+                </div>
+            </div>
+        </div>
 
-    <p class="p-detail-heading"><span>Author:</span><br> {{author}}</p>
-    <p class="p-detail-heading"><span>Pages:</span><br> {{pages}}</p>
-    <p class="p-detail-heading"><span>Genre:</span><br> {{genre}}</p>
-    <p class="p-detail-heading"><span>Price:</span><br> ${{price}}</p>
+        <div class="detail-btns">
+        
+            <button class="edit-btn">
+                <a href="/books/edit/{{_id}}">
+                <i class="fa-solid fa-file-pen"></i>
+                Update
+                </a>
+            </button>
+            
+            <form action="/books/delete/{{_id}}" method="POST">
+                <button class="delete-btn">
+                    <i class="fa-regular fa-trash-can"></i>
+                    Delete?
+                </button>
+            </form>
 
-    </div>
+            <p class="warning"><i class="fa-solid fa-triangle-exclamation"></i> Deleting this record cannot be undone</p>            
+            
+        </div>
 
-</div>
-    
-    <div class="detail-btns">
-
-    <button class="edit-book-btn"><a href="/books/edit/{{_id}}">Edit This Book</a></button>
-    <br>
-     <form action="/books/delete/{{_id}}" method="POST">
-        <button class="delete-btn">Delete</button>
-    </form>
     </div>
 
 </main>
 
-
 {{/if}}
-

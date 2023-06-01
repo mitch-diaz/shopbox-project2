@@ -1,0 +1,251 @@
+/* =============== Home page media queries =============== */
+
+/* Navigation (not logged in) */
+@media (max-width:1200px) {
+  nav {
+      flex-direction: column;
+  }
+}
+
+@media (max-width: 499px) {
+  .logo {
+      font-size: 2rem;
+      padding: 10px;
+  }
+
+  .nav_link:nth-of-type(5) {
+    margin-right: 8px;
+  }
+
+  .auth-link {
+    margin-right: 0;
+    padding: 0;
+  }
+
+  .sign-up {
+    border: none;
+  }
+
+  .nav_items a {
+    font-size: 1.3rem;
+  }
+}
+
+/* Hero section */
+@media (max-width: 1028px) {
+  .hero-section-1 {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px 10px 50px 10px;
+  }
+
+  .heroImg-section-1 {
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .heroText-section-1 {
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .heroText-section-1 .button {
+    align-self: center;
+  }
+}
+
+/* Products ("Commerce", "Customers", "Banking", "Staff") */
+@media (max-width: 1028px) {
+  .products-section-box {
+    width: 100%;
+    max-width: 700px;
+  }
+
+  .products-text-section {
+    width: 100%;
+    max-width: 700px;
+  }
+}
+
+/* Start Selling with Shopbox section */
+@media (max-width: 430px) {
+  .contact-links {
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+  .contact-links a {
+    font-size: 1.2rem;
+  }
+  .h3__stay-in-touch {
+    align-self:flex-start;
+  }
+  .para__stay-in-touch {
+    text-align: left;
+  }
+}
+
+/* Footer */
+@media (max-width: 620px) {
+  .footer-link-list-wrapper {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .link-list {
+    align-items: center;
+  }
+
+  .link-list .ul-contact {
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  footer {
+    padding: 40px 10px 40px 10px;
+  }
+
+  .footer-link-list-wrapper {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .link-list {
+    max-width: 100%;
+    align-items: center;
+    line-height: 1.6em;
+  }
+
+  .link-list ul {
+    text-align: center;
+    border-bottom: 1px solid #494949;
+    width: 200px;
+    padding: 20px 0 20px 0;
+  }
+
+  .link-list-title {
+    font-size:  1.2rem;
+  }
+
+  .li a {
+    font-size: 1.1rem;
+  }
+
+  .li-contact {
+    font-size: 1.1rem;
+  }
+  
+  .social_media_icons {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* =============== Logged In pages =============== */
+/* Navigation (logged in) */
+@media(max-width: 499px) {
+  .nav_link_user:nth-of-type(4) {
+    margin-right: 8px;
+  }
+
+  .auth-link {
+    margin-right: 0;
+    padding: 0;
+  }
+
+  .profile {
+    border: none;
+  }
+
+  .nav_items a {
+    font-size: 1.3rem;
+  }
+}
+  
+/* content_heading */
+@media (max-width: 499px) {
+  .content-heading {
+    margin-bottom: 30px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+}
+
+/* Books & Movies list media queries */
+@media (max-width: 680px) {
+    .flex__parent__container-list-display {
+        flex-direction: column;
+}
+
+    .content-heading {
+        margin-bottom: 30px;
+    }
+
+    .content__titles__container {
+        display: none;
+    }
+
+    .content__wrapper-list-display,
+    .content__wrapper-list-display:nth-of-type(2),
+    .content__wrapper-list-display:nth-of-type(3) {
+        width: 100%;
+    }
+
+    .content__wrapper-list-display p {
+        margin: .5em 0 .5em 0;
+        font-size: 1.2rem;
+    }
+
+    .content__wrapper-list-display .hidden-title {
+        display: inline;
+    }
+}
+
+/* Customer & Purchases list media queries */
+@media (max-width: 680px) {
+    .flex__parent__container-list-display-cust-purch {
+        flex-direction: column;
+    }
+
+    .content__titles__container-cust-purch {
+        display: none;
+    }
+
+    .content__wrapper-list-display-cust-purch p {
+        margin: .5em 0 .5em 0;
+        font-size: 1.2rem;
+    }
+
+    .content__wrapper-list-display-cust-purch .hidden-title {
+        display: inline;
+    }
+}
+
+/* Form media queries */
+@media (max-width: 499px) {
+  .media-fwrap {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 399px) {
+  .radio-media-col {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .input-radio {
+    height: 2rem;
+  }
+
+  select {
+    width: 100%;
+  }
+}

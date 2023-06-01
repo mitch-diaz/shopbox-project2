@@ -1,40 +1,57 @@
 {{#if currentUser}}
-<main class="content">
-    
-    <div class="page-heading">
-        <h1>Customer Information</h1>
-        <p> <a class="back-link" href="/customers">Back to customers list</a> </p>
-    </div>
+<main>
 
-    <div class="details-container">
+    <div class="content__container">
+        
+        <div class="details__container">
 
-        <div class="details-info-box">
-            <p class="p-detail-heading"> <span>Name:</span> <br>{{firstName}} {{lastName}} </p>
+            <div class="details_heading_wrapper">
+                <h2>Customer Information</h2>
+                <p><a class="back-link" href="/customers">Back to customers list</a></p>
+            </div>
 
-            <p class="p-detail-heading"> <span>Email:</span> <br>{{email}} </p>
+            <div class="details_wrapper">
 
-            <p class="p-detail-heading">
-                <span>Address:</span> <br>
-                {{address}}, Apt#: {{apartmentNumber}} <br>
-                {{city}}, {{state}}, {{zip}} 
-            </p>
+                <div class="details_flex_col">
+                    <p class="detail-info"> <span>First name: </span> {{firstName}}</p>
+                    <p class="detail-info"> <span>Last name: </span> {{lastName}}</p>
+                    <p class="detail-info"> <span>Email: </span> {{email}} </p>
+                    <p class="detail-info"><span>Address: </span> {{address}}</p>
+                    <p class="detail-info"><span>Apt#: </span> {{apartmentNumber}}</p>
+                    <p class="detail-info"><span>City: </span> {{city}}</p>
+                    <p class="detail-info"><span>State: </span> {{state}}</p>
+                    <p class="detail-info"><span>Zip: </span> {{zip}}</p>
+                </div>
 
-            <p class="p-detail-heading"> <span>Purchases:</span> </p>
-            <ul>
-                {{#each purchases}}
-                    <li class="p-detail-heading"> <a class="details-link" href="/purchases/{{_id}}">View purchase {{_id}}</a> </li>
-                {{/each}}
-            </ul>
+                <div class="details_flex_col">
+                    <p class="detail-info"> <span>Purchases:</span> </p>
+                    <ul>
+                        {{#each purchases}}
+                            <li class="detail-li"> <a class="details-link" href="/purchases/{{_id}}">View purchase {{_id}}</a> </li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+            </div>
         </div>
 
         <div class="detail-btns">
 
-            <button class="update-customer-btn"> <a href="/customers/{{_id}}/update-customer">Update customer info</a> </button>
+            <button class="edit-btn">
+                <a href="/customers/{{_id}}/update-customer">
+                <i class="fa-solid fa-file-pen"></i>
+                Update
+                </a>
+            </button>
 
             <form action="/customers/delete/{{_id}}" method="POST">
-                <button class="delete-btn">Delete this customer</button>
+                <button class="delete-btn">
+                    <i class="fa-regular fa-trash-can"></i>
+                    Delete?
+                </button>
             </form>
-
+            
+            <p class="warning"><i class="fa-solid fa-triangle-exclamation"></i> Deleting this record cannot be undone</p>
         </div>
 
     </div>

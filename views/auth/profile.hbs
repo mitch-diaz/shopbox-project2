@@ -1,39 +1,36 @@
 {{#if currentUser}}
-<main class="content">
+<main>
 
-    <div class="page-heading">
-        <h1>Profile</h1>
-    </div>
-
-    <div class="details-container">
-
-        <div class="details-info-box">
-            <p class="p-detail-heading"> <span>Name:</span> <br>{{user.firstName}} {{user.lastName}} </p>
-
-            <p class="p-detail-heading"> <span>Address:</span> <br>
-                {{user.address}}, Suite#: {{user.unitNumber}} <br>
-                {{user.city}}, {{user.state}}, {{user.zip}} 
-            </p>
-
-            <p class="p-detail-heading"> <span>Email:</span> <br>{{user.email}} </p>
-
-            <p class="p-detail-heading"> <span>Access level:</span> <br>{{user.role}} </p>
-
-            <p class="p-detail-heading"> <span>Store type:</span> <br>{{user.storeType}} </p>
+    <div class="content__container">
+        <div class="details__container">
+            <div class="details_heading_wrapper">
+                <h2>Profile</h2>
+            </div>
+            <div class="details-wrapper">
+                <div class="details_wrapper">
+                    <p class="detail-info"> <span>First name:</span> {{user.firstName}}</p>
+                    <p class="detail-info"> <span>Last name:</span> {{user.lastName}} </p>
+                    <p class="detail-info"> <span>Address:</span> {{user.address}}</p>
+                    <p class="detail-info"> <span>Suite#:</span> {{user.unitNumber}}</p>
+                    <p class="detail-info"> <span>City:</span> {{user.city}}</p>
+                    <p class="detail-info"> <span>State:</span> {{user.state}}</p>
+                    <p class="detail-info"> <span>Zip:</span> {{user.zip}}</p>
+                    <p class="detail-info"> <span>Email:</span> {{user.email}} </p>
+                    <p class="detail-info"> <span>Access level:</span> {{user.role}} </p>
+                    <p class="detail-info"> <span>Store type:</span> {{user.storeType}} </p>
+                </div>
+        
+            </div>
         </div>
-
-    </div>
-
-    <div class="profile-btns-div">
-
-        <button class="update-profile-btn">
-            <a href="/auth/update-profile/{{user.id}}">Update your profile</a>
-        </button>
-
-        <button class="change-password-btn">
-            <a href="/auth/change-password">Change Password</a>
-        </button>
-
+        <div class="detail-btns">
+            <button class="update-profile">
+                <a href="/auth/update-profile/{{user.id}}">Update your profile</a>
+            </button>
+            <button class="change-password">
+                <a href="/auth/change-password">Change Password</a>
+            </button>
+        
+        </div>
     </div>
 
 </main>

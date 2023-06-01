@@ -1,46 +1,38 @@
-
-
 {{#if currentUser}}
-<main class="content">
-    <div class="page-heading">
-        <h1>Book List</h1>
-        <button><a href="/books/createBook">Add New Book</a></button>
+<main class="page__content__container">
+    <div class="content-heading">
+        <h2>Book List</h2>
+        <button class="add-item-btn"><a href="/books/createBook">Add Book</a></button>
     </div>
 
-    <div class="page-list-heading">
-        <div class="list-head" id="title">
-            <p>Title</p>
+    <div class="content__titles__container">
+        <div class="content-title">
+            <h5>Title</h5>
         </div>
-        <div class="list-head" id="author">
-            <p>Author</p>
+        <div class="content-title">
+            <h5>Author</h5>
         </div>
-        <div class="list-head">
-            <p> </p>
+        <div class="content-title">
+            <h5>Details</h5>
         </div>
     </div>
    
-
     {{#each book}}
-    <div class="list-actual-display">
-        <div class="actual1">
-            <p>{{title}}</p>
+    <div class="flex__parent__container-list-display">
+        <div class="content__wrapper-list-display">
+            <p><span class="hidden-title">Title:</span> {{title}}</p>
         </div>
 
-        <div class="actual2">
-            <p>{{author}}</p>
+        <div class="content__wrapper-list-display">
+            <p> <span class="hidden-title">Author:</span> {{author}}</p>
         </div>
 
-        <div class="actual3">
-            <p><a class="details-link" href="/books/details/{{_id}}">See book details</a></p>
+        <div class="content__wrapper-list-display">
+            <p><a class="details-link" href="/books/details/{{_id}}">See details...</a></p>
         </div> 
 
     </div>
-{{/each}}
-    
+    {{/each}}
 
 </main>
-
-
-<br>
-
 {{/if}}

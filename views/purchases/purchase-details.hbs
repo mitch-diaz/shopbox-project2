@@ -1,38 +1,38 @@
 {{#if currentUser}}
-<main class="content">
+<main>
     
-    <div class="page-heading">
-        <h1>Purchase Details for: {{customers.firstName}} {{customers.lastName}}</h1>
-        <p> <a class="back-link" href="/purchases">Back to purchases</a> </p>
-    </div>
+    <div class="content__container">
 
-    <div class="details-container">
+        <div class="details__container">
 
-        <div class="details-info-box">
-            <p class="p-detail-heading"> <span>Purchase ID:</span> <br>{{_id}}</p>
-            <p class="p-detail-heading"> <span>Invoice#:</span> <br>{{invoiceId}}</p>
-            <p class="p-detail-heading"> <span>Customer:</span> <br>{{customers.firstName}} {{customers.lastName}}</p>
-            <p class="p-detail-heading"> <span>Purchase Date:</span> <br>{{invoiceDate}}</p>
-
-            {{!-- {{#each books}} --}}
-                <p class="p-detail-heading"> <span>Books purchased:</span> <br>{{books.title}} - ${{books.price}}</p>
-                <p class="p-detail-heading"> <span>Movies purchased:</span> <br>{{movies.title}} - ${{movies.price}}</p>
-            {{!-- {{/each}} --}}
-
-            {{!-- {{#each movies}}
-
-            {{/each}} --}}
-
-            <p class="p-detail-heading"> <span>Total:</span> <br>{{purchaseTotal}}</p>
+            <div class="details_heading_wrapper">
+                <h2>Purchase Details:</h2>
+                <p><a class="back-link" href="/purchases">Back to purchases</a></p>
+            </div>
             
+            <div class="details_wrapper">
+
+                <div class="details_flex_col">
+                    <p class="detail-info"> <span>Purchase ID:</span> {{_id}}</p>
+                    <p class="detail-info"> <span>Invoice#:</span> {{invoiceId}}</p>
+                    <p class="detail-info"> <span>Customer:</span> {{customers.firstName}} {{customers.lastName}}</p>
+                    <p class="detail-info"> <span>Purchase Date:</span> {{invoiceDate}}</p>
+                    <p class="detail-info"> <span>Books purchased:</span> {{books.title}} - ${{books.price}}</p>
+                    <p class="detail-info"> <span>Movies purchased:</span> {{movies.title}} - ${{movies.price}}</p>
+                    <p class="detail-info"> <span>Total Purchase:</span> {{purchaseTotal}}</p>
+                </div>
+            </div>
+
         </div>
-
+    
         <div class="detail-btns">
-
             <form action="/purchases/delete/{{_id}}" method="POST">
-                <button class="delete-btn">Delete purchase</button>
+                <button class="delete-btn">
+                    <i class="fa-regular fa-trash-can"></i>
+                    Delete?
+                </button>
             </form>
-
+            <p class="warning"><i class="fa-solid fa-triangle-exclamation"></i> Deleting this record cannot be undone</p>
         </div>
 
     </div>
