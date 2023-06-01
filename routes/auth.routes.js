@@ -123,7 +123,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 
         req.session.user = user;
         // req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
-        return res.redirect("/");
+        return res.redirect("profile");
       });
     })
 
@@ -206,7 +206,7 @@ router.post('/change-password', (req, res, next)=>{
 
   User.findById(req.session.user._id)
   .then(resultFromDB => {
-     if (js.compareSync(req.body.oldpass, resultFromDB.password)) {
+     if (bcryptjs.compareSync(req.body.oldpass, resultFromDB.password)) {
       const saltRounds = 10;
       bcryptjs
       .genSalt(saltRounds)
