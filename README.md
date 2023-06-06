@@ -1,4 +1,4 @@
-#Project 2: Full-stack web app  
+# Project 2: Full-stack web app  
 
 ## Shopbox (e-comm backend)
 
