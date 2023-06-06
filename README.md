@@ -1,13 +1,13 @@
 #Project 2: Full-stack web app  
 
-##Shopbox (e-comm backend)
+## Shopbox (e-comm backend)
 
 **Built with Express, NodeJS, MongoDB, Mongoose, and Handlebars**
 
 Shopbox is a an E-commerce backend with basic features for adding products, inventory count, prices, creating invoices, managing customer DB, and recording all customers purchases. Developed as a partner project with fellow classmate Zach Johnson.
 
 
-##Technical requirements for project:  
+## Technical requirements for project:  
 
 Objective - apply newly acquired backend skill sets to make a complete web application.
 
